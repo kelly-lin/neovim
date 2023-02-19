@@ -55,6 +55,9 @@ NEW FEATURES                                                    *news-features*
 
 The following new APIs or features were added.
 
+• Added a `vim.semver` module for parsing and comparing version numbers according
+  to the semver specification, see |lua-semver|.
+
 • A new environment variable named NVIM_APPNAME enables configuring the
   directories where Neovim should find its configuration and state files. See
   `:help $NVIM_APPNAME` .

@@ -2473,4 +2473,45 @@ trust({opts})                                             *vim.secure.trust()*
         • true and full path of target file if operation was successful
         • false and error message on failure
 
+
+==============================================================================
+Lua module: semver                                                *lua-semver*
+
+cmp({v1}, {v2}, {opts})                                         *semver.cmp()*
+    Compares two strings ( `v1` and `v2` ) in semver format.
+
+    Parameters: ~
+      • {v1}    (string) Version.
+      • {v2}    (string) Version to be compared with v1.
+      • {opts}  (table|nil) Optional keyword arguments:
+                • strict (boolean): see `semver.parse` for details. Defaults
+                  to false.
+
+    Return: ~
+        (integer) `-1` if `v1 < v2`, `0` if `v1 == v2`, `1` if `v1 > v2`.
+
+parse({version}, {opts})                                      *semver.parse()*
+    Parses a semantically formatted version string into a table.
+
+    Supports leading "v" and leading and trailing whitespace in the version
+    string. e.g. `" v1.0.1-rc1+build.2"` , `"1.0.1-rc1+build.2"`,
+    `"v1.0.1-rc1+build.2"` and `"v1.0.1-rc1+build.2 "` will be parsed as:
+
+    { major = 1, minor = 0, patch = 1, prerelease = 'rc1 , build = 'build.2' }`
+
+    Parameters: ~
+      • {version}  (string) Version string to be parsed.
+      • {opts}     (table|nil) Optional keyword arguments:
+                   • strict (boolean): when set to `true` an error will be
+                     thrown for version strings which are not conforming to
+                     semver sepecifications (v2.0.0), (see
+                     semver.org/spec/v2.0.0.html for details), this means that
+                     `semver.parse('v1.2)` will throw an error. When set to
+                     `false`, `semver.parse('v1.2)` will coerce 'v1.2' to
+                     'v1.2.0' and return the table: `{ major = 1, minor = 2,
+                     patch = 0 }`. Defaults to false.
+
+    Return: ~
+        (table) parsed_version Parsed version table
+
  vim:tw=78:ts=8:sw=4:sts=4:et:ft=help:norl:

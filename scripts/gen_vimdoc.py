@@ -141,6 +141,7 @@ CONFIG = {
             'keymap.lua',
             'fs.lua',
             'secure.lua',
+            'semver.lua',
         ],
         'files': [
             'runtime/lua/vim/_editor.lua',
@@ -151,6 +152,7 @@ CONFIG = {
             'runtime/lua/vim/keymap.lua',
             'runtime/lua/vim/fs.lua',
             'runtime/lua/vim/secure.lua',
+            'runtime/lua/vim/semver.lua',
             'runtime/lua/vim/_inspector.lua',
         ],
         'file_patterns': '*.lua',
