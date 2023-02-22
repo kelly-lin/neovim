@@ -914,6 +914,11 @@ function vim._init_defaults()
   vim._init_default_autocmds()
 end
 
+vim.version = {}
+vim.version.cmp = vim.semver.cmp
+vim.version.parse = vim.semver.parse
+setmetatable(vim.version, { __call = vim._version })
+
 require('vim._meta')
 
 return vim

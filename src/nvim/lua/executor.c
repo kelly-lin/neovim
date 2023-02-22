@@ -741,7 +741,7 @@ static bool nlua_state_init(lua_State *const lstate) FUNC_ATTR_NONNULL_ALL
 
   // neovim version
   lua_pushcfunction(lstate, &nlua_nvim_version);
-  lua_setfield(lstate, -2, "version");
+  lua_setfield(lstate, -2, "_version");
 
   // schedule
   lua_pushcfunction(lstate, &nlua_schedule);
